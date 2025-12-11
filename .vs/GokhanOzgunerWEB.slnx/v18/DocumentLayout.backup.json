@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-11T14:13:53.36Z",
               "EditorCaption": ""
@@ -52,15 +52,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GokhanOzgunerWEB",
+              "Title": "GokhanOzgunerWEB.csproj",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\GokhanOzgunerWEB.csproj",
               "RelativeDocumentMoniker": "GokhanOzgunerWEB.csproj",
               "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\GokhanOzgunerWEB.csproj",
               "RelativeToolTip": "GokhanOzgunerWEB.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-11T14:13:53.036Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T14:13:53.036Z"
             },
             {
               "$type": "Document",
@@ -72,8 +71,7 @@
               "RelativeToolTip": "ViewModels\\AccountViewModels.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T14:13:50.952Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T14:13:50.952Z"
             },
             {
               "$type": "Document",
@@ -85,8 +83,7 @@
               "RelativeToolTip": "Models\\Randevu.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAQwBkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T17:44:54.565Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-10T17:44:54.565Z"
             },
             {
               "$type": "Document",
