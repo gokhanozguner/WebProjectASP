@@ -1,8 +1,129 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Ana Sayfa";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mb-5">
+    <h1 class="display-4">
+        <i class="bi bi-heart-pulse-fill text-danger"></i>
+        Fitness Yönetim Sistemi
+    </h1>
+    <p class="lead">Spor salonunuzu kolayca yönetin, randevularınızı düzenleyin!</p>
 </div>
+
+@if (User.Identity?.IsAuthenticated ?? false)
+{
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card border-primary shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-calendar-plus display-3 text-primary mb-3"></i>
+                    <h5 class="card-title">Randevu Al</h5>
+                    <p class="card-text">Antrenörlerden randevu alın ve fitness hedeflerinize ulaşın.</p>
+                    <a asp-controller="Randevu" asp-action="Create" class="btn btn-primary">
+                        <i class="bi bi-calendar-plus"></i> Randevu Al
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-success shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-calendar-check display-3 text-success mb-3"></i>
+                    <h5 class="card-title">Randevularım</h5>
+                    <p class="card-text">Mevcut ve geçmiş randevularınızı görüntüleyin.</p>
+                    <a asp-controller="Randevu" asp-action="MyAppointments" class="btn btn-success">
+                        <i class="bi bi-list-ul"></i> Randevularımı Gör
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-info shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-robot display-3 text-info mb-3"></i>
+                    <h5 class="card-title">AI Önerileri</h5>
+                    <p class="card-text">Yapay zeka destekli egzersiz ve diyet önerileri alın.</p>
+                    <a asp-controller="AI" asp-action="Index" class="btn btn-info">
+                        <i class="bi bi-stars"></i> AI Önerileri
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (User.IsInRole("Admin"))
+    {
+        <hr class="my-5">
+        <h3 class="text-center mb-4"><i class="bi bi-gear"></i> Admin İşlemleri</h3>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card border-warning shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-building display-4 text-warning mb-2"></i>
+                        <h6 class="card-title">Salonlar</h6>
+                        <a asp-controller="Salon" asp-action="Index" class="btn btn-sm btn-warning">Yönet</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-danger shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-person-badge display-4 text-danger mb-2"></i>
+                        <h6 class="card-title">Antrenörler</h6>
+                        <a asp-controller="Antrenor" asp-action="Index" class="btn btn-sm btn-danger">Yönet</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-primary shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-card-list display-4 text-primary mb-2"></i>
+                        <h6 class="card-title">Hizmetler</h6>
+                        <a asp-controller="Hizmet" asp-action="Index" class="btn btn-sm btn-primary">Yönet</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-success shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-calendar3 display-4 text-success mb-2"></i>
+                        <h6 class="card-title">Randevular</h6>
+                        <a asp-controller="Randevu" asp-action="Index" class="btn btn-sm btn-success">Yönet</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card border-primary shadow h-100">
+                <div class="card-body text-center p-5">
+                    <i class="bi bi-box-arrow-in-right display-1 text-primary mb-3"></i>
+                    <h3 class="card-title">Giriş Yap</h3>
+                    <p class="card-text">Mevcut hesabınızla giriş yaparak randevularınızı yönetin.</p>
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-primary btn-lg">
+                        <i class="bi bi-box-arrow-in-right"></i> Giriş Yap
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card border-success shadow h-100">
+                <div class="card-body text-center p-5">
+                    <i class="bi bi-person-plus display-1 text-success mb-3"></i>
+                    <h3 class="card-title">Üye Ol</h3>
+                    <p class="card-text">Yeni hesap oluşturarak fitness yolculuğunuza başlayın.</p>
+                    <a asp-controller="Account" asp-action="Register" class="btn btn-success btn-lg">
+                        <i class="bi bi-person-plus"></i> Üye Ol
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
