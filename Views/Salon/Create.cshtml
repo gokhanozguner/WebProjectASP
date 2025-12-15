@@ -1,0 +1,74 @@
+﻿@model GokhanOzgunerWEB.Models.Salon
+
+@{
+    ViewData["Title"] = "Yeni Salon Ekle";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="bi bi-building"></i> Yeni Salon Ekle</h4>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Ad" class="form-label"></label>
+                            <input asp-for="Ad" class="form-control" placeholder="Örn: Merkez Spor Salonu" />
+                            <span asp-validation-for="Ad" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Telefon" class="form-label"></label>
+                            <input asp-for="Telefon" class="form-control" placeholder="0555 555 55 55" />
+                            <span asp-validation-for="Telefon" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Adres" class="form-label"></label>
+                        <textarea asp-for="Adres" class="form-control" rows="2" placeholder="Salon adresi"></textarea>
+                        <span asp-validation-for="Adres" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="AcilisSaati" class="form-label"></label>
+                            <input asp-for="AcilisSaati" type="time" class="form-control" value="08:00" />
+                            <span asp-validation-for="AcilisSaati" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="KapanisSaati" class="form-label"></label>
+                            <input asp-for="KapanisSaati" type="time" class="form-control" value="22:00" />
+                            <span asp-validation-for="KapanisSaati" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input asp-for="Aktif" class="form-check-input" checked />
+                        <label asp-for="Aktif" class="form-check-label"></label>
+                    </div>
+
+                    <hr>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Kaydet
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-x-circle"></i> İptal
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,59 @@
+﻿@model GokhanOzgunerWEB.Models.Salon
+
+@{
+    ViewData["Title"] = "Salon Sil";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow border-danger">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0"><i class="bi bi-exclamation-triangle"></i> Salon Sil</h4>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-warning">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    <strong>Uyarı!</strong> Bu salonu silmek istediğinizden emin misiniz?
+                </div>
+
+                <dl class="row">
+                    <dt class="col-sm-3">Salon Adı</dt>
+                    <dd class="col-sm-9">@Model.Ad</dd>
+
+                    <dt class="col-sm-3">Adres</dt>
+                    <dd class="col-sm-9">@(Model.Adres ?? "-")</dd>
+
+                    <dt class="col-sm-3">Çalışma Saatleri</dt>
+                    <dd class="col-sm-9">
+                        @Model.AcilisSaati.ToString(@"hh\:mm") - @Model.KapanisSaati.ToString(@"hh\:mm")
+                    </dd>
+
+                    <dt class="col-sm-3">Telefon</dt>
+                    <dd class="col-sm-9">@(Model.Telefon ?? "-")</dd>
+
+                    <dt class="col-sm-3">Antrenör Sayısı</dt>
+                    <dd class="col-sm-9">
+                        <span class="badge bg-info">@Model.Antrenorler.Count</span>
+                    </dd>
+
+                    <dt class="col-sm-3">Hizmet Sayısı</dt>
+                    <dd class="col-sm-9">
+                        <span class="badge bg-secondary">@Model.Hizmetler.Count</span>
+                    </dd>
+                </dl>
+
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="bi bi-trash"></i> Evet, Sil
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-x-circle"></i> İptal
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
