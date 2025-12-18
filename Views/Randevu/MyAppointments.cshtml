@@ -1,0 +1,91 @@
+﻿@model IEnumerable<GokhanOzgunerWEB.Models.Randevu>
+
+@{
+    ViewData["Title"] = "Randevularım";
+}
+
+<h2 class="mb-4"><i class="bi bi-calendar-check"></i> Randevularım</h2>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show">
+        <i class="bi bi-check-circle"></i> @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show">
+        <i class="bi bi-exclamation-triangle"></i> @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<div class="mb-3">
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-calendar-plus"></i> Yeni Randevu Al
+    </a>
+</div>
+
+@if (Model.Any())
+{
+    <div class="row g-3">
+        @foreach (var randevu in Model)
+        {
+            var durum = randevu.Durum switch
+            {
+                FitnessYonetimi.Models.RandevuDurum.Beklemede => ("warning", "Beklemede"),
+                FitnessYonetimi.Models.RandevuDurum.Onaylandi => ("success", "Onaylandı"),
+                FitnessYonetimi.Models.RandevuDurum.Reddedildi => ("danger", "Reddedildi"),
+                FitnessYonetimi.Models.RandevuDurum.Tamamlandi => ("info", "Tamamlandı"),
+                FitnessYonetimi.Models.RandevuDurum.IptalEdildi => ("secondary", "İptal Edildi"),
+                _ => ("secondary", "Bilinmiyor")
+            };
+
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-@durum.Item1 text-white d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-calendar3"></i> @randevu.RandevuTarihi.ToString("dd MMMM yyyy")</span>
+                        <span class="badge bg-light text-dark">@durum.Item2</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@randevu.Hizmet?.Ad</h5>
+                        <p class="card-text">
+                            <i class="bi bi-person-badge"></i> <strong>Antrenör:</strong> @randevu.Antrenor?.AdSoyad<br>
+                            <i class="bi bi-clock"></i> <strong>Saat:</strong> @randevu.BaslangicSaati.ToString(@"hh\:mm") - @randevu.BitisSaati.ToString(@"hh\:mm")<br>
+                            <i class="bi bi-currency-exchange"></i> <strong>Ücret:</strong> @randevu.Hizmet?.Ucret.ToString("C2")
+                        </p>
+                        @if (randevu.Notlar != null)
+                        {
+                            <p class="text-muted"><small><i class="bi bi-sticky"></i> @randevu.Notlar</small></p>
+                        }
+                    </div>
+                    @if (randevu.Durum == FitnessYonetimi.Models.RandevuDurum.Beklemede || randevu.Durum == FitnessYonetimi.Models.RandevuDurum.Onaylandi)
+                    {
+                        <div class="card-footer">
+                            <form asp-action="Cancel" asp-route-id="@randevu.Id" method="post"
+                                  onsubmit="return confirm('Bu randevuyu iptal etmek istediğinizden emin misiniz?')">
+                                <button type="submit" class="btn btn-sm btn-danger">
+                                    <i class="bi bi-x-circle"></i> Randevuyu İptal Et
+                                </button>
+                            </form>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-body text-center py-5">
+            <i class="bi bi-calendar-x display-1 text-muted"></i>
+            <p class="text-muted mt-3">Henüz randevunuz bulunmamaktadır.</p>
+            <a asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-calendar-plus"></i> İlk Randevunu Al
+            </a>
+        </div>
+    </div>
+}

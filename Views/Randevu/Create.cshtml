@@ -1,0 +1,148 @@
+﻿@{
+    ViewData["Title"] = "Randevu Al";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="bi bi-calendar-plus"></i> Randevu Al</h4>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create" method="post" id="randevuForm">
+                    <div class="mb-3">
+                        <label for="salonId" class="form-label">Salon Seçin</label>
+                        <select id="salonId" name="salonId" class="form-select" required>
+                            <option value="">-- Salon Seçin --</option>
+                            @foreach (var salon in ViewBag.SalonId as SelectList)
+                            {
+                                <option value="@salon.Value">@salon.Text</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="hizmetId" class="form-label">Hizmet Seçin</label>
+                        <select id="hizmetId" name="hizmetId" class="form-select" required disabled>
+                            <option value="">-- Önce Salon Seçin --</option>
+                        </select>
+                        <small id="hizmetInfo" class="form-text text-muted"></small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="antrenorId" class="form-label">Antrenör Seçin</label>
+                        <select id="antrenorId" name="antrenorId" class="form-select" required disabled>
+                            <option value="">-- Önce Salon Seçin --</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="randevuTarihi" class="form-label">Tarih Seçin</label>
+                        <input type="date" id="randevuTarihi" name="randevuTarihi" class="form-control" required disabled>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="baslangicSaati" class="form-label">Saat Seçin</label>
+                        <select id="baslangicSaati" name="baslangicSaati" class="form-select" required disabled>
+                            <option value="">-- Önce Tarih Seçin --</option>
+                        </select>
+                    </div>
+
+                    <hr>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary" id="submitBtn" disabled>
+                            <i class="bi bi-calendar-check"></i> Randevu Al
+                        </button>
+                        <a asp-action="MyAppointments" class="btn btn-secondary">
+                            <i class="bi bi-x-circle"></i> İptal
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const salonSelect = document.getElementById('salonId');
+        const hizmetSelect = document.getElementById('hizmetId');
+        const antrenorSelect = document.getElementById('antrenorId');
+        const tarihInput = document.getElementById('randevuTarihi');
+        const saatSelect = document.getElementById('baslangicSaati');
+        const submitBtn = document.getElementById('submitBtn');
+        const hizmetInfo = document.getElementById('hizmetInfo');
+
+        // Bugünün tarihini minimum olarak ayarla
+        const today = new Date().toISOString().split('T')[0];
+        tarihInput.setAttribute('min', today);
+
+        salonSelect.addEventListener('change', async function() {
+            const salonId = this.value;
+            if (!salonId) return;
+
+            // Hizmetleri getir
+            const hizmetRes = await fetch(`/Randevu/GetHizmetlerBySalon?salonId=${salonId}`);
+            const hizmetler = await hizmetRes.json();
+
+            hizmetSelect.innerHTML = '<option value="">-- Hizmet Seçin --</option>';
+            hizmetler.forEach(h => {
+                hizmetSelect.innerHTML += `<option value="${h.id}" data-sure="${h.sure}" data-ucret="${h.ucret}">${h.ad}</option>`;
+            });
+            hizmetSelect.disabled = false;
+
+            // Antrenörleri getir
+            const antrenorRes = await fetch(`/Randevu/GetAntrenorlerBySalon?salonId=${salonId}`);
+            const antrenorler = await antrenorRes.json();
+
+            antrenorSelect.innerHTML = '<option value="">-- Antrenör Seçin --</option>';
+            antrenorler.forEach(a => {
+                antrenorSelect.innerHTML += `<option value="${a.id}">${a.adSoyad}</option>`;
+            });
+            antrenorSelect.disabled = false;
+        });
+
+        hizmetSelect.addEventListener('change', function() {
+            const selected = this.options[this.selectedIndex];
+            if (selected.value) {
+                const sure = selected.getAttribute('data-sure');
+                const ucret = selected.getAttribute('data-ucret');
+                hizmetInfo.innerHTML = `<strong>Süre:</strong> ${sure} dakika | <strong>Ücret:</strong> ${ucret} ₺`;
+                tarihInput.disabled = false;
+            }
+        });
+
+        tarihInput.addEventListener('change', checkAndLoadSaatler);
+        antrenorSelect.addEventListener('change', checkAndLoadSaatler);
+
+        async function checkAndLoadSaatler() {
+            const antrenorId = antrenorSelect.value;
+            const tarih = tarihInput.value;
+            const hizmetId = hizmetSelect.value;
+
+            if (!antrenorId || !tarih || !hizmetId) return;
+
+            saatSelect.innerHTML = '<option value="">Yükleniyor...</option>';
+            saatSelect.disabled = true;
+
+            const res = await fetch(`/Randevu/GetUygunSaatler?antrenorId=${antrenorId}&tarih=${tarih}&hizmetId=${hizmetId}`);
+            const data = await res.json();
+
+            if (data.success && data.saatler.length > 0) {
+                saatSelect.innerHTML = '<option value="">-- Saat Seçin --</option>';
+                data.saatler.forEach(s => {
+                    saatSelect.innerHTML += `<option value="${s}">${s}</option>`;
+                });
+                saatSelect.disabled = false;
+            } else {
+                saatSelect.innerHTML = '<option value="">Uygun saat yok</option>';
+                alert(data.message || 'Bu tarih için uygun saat bulunamadı');
+            }
+        }
+
+        saatSelect.addEventListener('change', function() {
+            submitBtn.disabled = !this.value;
+        });
+    </script>
+}
