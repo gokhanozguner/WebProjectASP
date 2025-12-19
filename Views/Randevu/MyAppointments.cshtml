@@ -35,11 +35,11 @@
         {
             var durum = randevu.Durum switch
             {
-                FitnessYonetimi.Models.RandevuDurum.Beklemede => ("warning", "Beklemede"),
-                FitnessYonetimi.Models.RandevuDurum.Onaylandi => ("success", "Onaylandı"),
-                FitnessYonetimi.Models.RandevuDurum.Reddedildi => ("danger", "Reddedildi"),
-                FitnessYonetimi.Models.RandevuDurum.Tamamlandi => ("info", "Tamamlandı"),
-                FitnessYonetimi.Models.RandevuDurum.IptalEdildi => ("secondary", "İptal Edildi"),
+                GokhanOzgunerWEB.Models.RandevuDurum.Beklemede => ("warning", "Beklemede"),
+                GokhanOzgunerWEB.Models.RandevuDurum.Onaylandi => ("success", "Onaylandı"),
+                GokhanOzgunerWEB.Models.RandevuDurum.Reddedildi => ("danger", "Reddedildi"),
+                GokhanOzgunerWEB.Models.RandevuDurum.Tamamlandi => ("info", "Tamamlandı"),
+                GokhanOzgunerWEB.Models.RandevuDurum.IptalEdildi => ("secondary", "İptal Edildi"),
                 _ => ("secondary", "Bilinmiyor")
             };
 
@@ -61,7 +61,7 @@
                             <p class="text-muted"><small><i class="bi bi-sticky"></i> @randevu.Notlar</small></p>
                         }
                     </div>
-                    @if (randevu.Durum == FitnessYonetimi.Models.RandevuDurum.Beklemede || randevu.Durum == FitnessYonetimi.Models.RandevuDurum.Onaylandi)
+                    @if (randevu.Durum == GokhanOzgunerWEB.Models.RandevuDurum.Beklemede || randevu.Durum == GokhanOzgunerWEB.Models.RandevuDurum.Onaylandi)
                     {
                         <div class="card-footer">
                             <form asp-action="Cancel" asp-route-id="@randevu.Id" method="post"
