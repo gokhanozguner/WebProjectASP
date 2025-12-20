@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GokhanOzgunerWEB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e81f0ac865202380d64c2dc130866035d2e8ed83")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abb7522825765015f5ca4d7d1663914d462a409a")]
 [assembly: System.Reflection.AssemblyProductAttribute("GokhanOzgunerWEB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GokhanOzgunerWEB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

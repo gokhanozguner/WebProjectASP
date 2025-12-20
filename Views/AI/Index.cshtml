@@ -1,0 +1,190 @@
+﻿@model GokhanOzgunerWEB.ViewModels.AIRecommendationViewModel
+
+@{
+    ViewData["Title"] = "AI Fitness Asistanı";
+}
+
+<h2 class="mb-4"><i class="bi bi-robot"></i> AI Fitness Asistanı</h2>
+
+<div class="alert alert-info shadow-sm">
+    <i class="bi bi-info-circle-fill"></i>
+    <strong>Yapay Zeka Destekli Öneriler!</strong> Vücut bilgilerinizi girin veya fotoğraf yükleyin, size özel egzersiz, beslenme programı ve hedeflenen vücut görseli hazırlayalım!
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="card shadow mb-4">
+            <div class="card-header bg-gradient" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h5 class="mb-0"><i class="bi bi-person-lines-fill"></i> Bilgilerinizi Girin</h5>
+            </div>
+            <div class="card-body">
+                <form asp-action="Index" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="All" class="text-danger mb-3 small"></div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold"><i class="bi bi-camera"></i> Vücut Fotoğrafı (Opsiyonel)</label>
+                        <input type="file" asp-for="Foto" class="form-control" accept="image/*" onchange="previewImage(this)" />
+                        <small class="text-muted fst-italic">Fotoğraf yüklerseniz AI mevcut formunuzu analiz eder.</small>
+                        <div id="imagePreview" class="mt-2 text-center"></div>
+                    </div>
+
+                    <div class="position-relative my-4">
+                        <hr>
+                        <span class="position-absolute top-50 start-50 translate-middle bg-white px-2 text-muted fw-bold">VEYA / VE</span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Boy" class="form-label">Boy</label>
+                            <div class="input-group">
+                                <input asp-for="Boy" class="form-control" placeholder="175" type="number" />
+                                <span class="input-group-text">cm</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Kilo" class="form-label">Kilo</label>
+                            <div class="input-group">
+                                <input asp-for="Kilo" class="form-control" placeholder="75" type="number" />
+                                <span class="input-group-text">kg</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Yas" class="form-label">Yaş</label>
+                            <input asp-for="Yas" class="form-control" placeholder="25" type="number" />
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Cinsiyet" class="form-label">Cinsiyet</label>
+                            <select asp-for="Cinsiyet" class="form-select">
+                                <option value="">Seçiniz</option>
+                                <option value="Erkek">Erkek</option>
+                                <option value="Kadın">Kadın</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Hedef" class="form-label">Hedefiniz</label>
+                        <select asp-for="Hedef" class="form-select">
+                            <option value="">Seçiniz</option>
+                            <option value="Kilo Verme">Kilo Verme</option>
+                            <option value="Kas Kazanma">Kas Kazanma</option>
+                            <option value="Genel Fitness">Genel Fitness</option>
+                            <option value="Dayanıklılık">Dayanıklılık Artırma</option>
+                        </select>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-lg text-white shadow-sm hover-effect" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); transition: transform 0.2s;">
+                            <i class="bi bi-stars"></i> Analiz Et ve Program Oluştur
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        @if (Model.Oneri != null)
+        {
+            @if (!string.IsNullOrEmpty(Model.GeneratedImageBase64))
+            {
+                <div class="card shadow mb-4 border-success">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0"><i class="bi bi-magic"></i> Hedeflenen Formunuz (6 Ay Sonra)</h5>
+                    </div>
+                    <div class="card-body text-center bg-light">
+                        <p class="text-muted mb-3">Mevcut verilerinize ve hedefinize göre, programı uyguladığınızda ulaşabileceğiniz tahmini form:</p>
+                        <img src="data:image/png;base64,@Model.GeneratedImageBase64" class="img-fluid rounded shadow-lg" style="max-height: 400px; width: auto; object-fit: cover;" alt="AI Generated Fitness Goal" />
+                        <div class="mt-2">
+                            <small class="text-muted fst-italic">* Görsel Yapay Zeka (Imagen 3) tarafından temsilidir.</small>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="card shadow mb-4">
+                <div class="card-header text-white" style="background-color: #4a5568;">
+                    <h5 class="mb-0"><i class="bi bi-list-check"></i> Size Özel Program</h5>
+                </div>
+                <div class="card-body" style="max-height: 600px; overflow-y: auto;">
+                    <div class="ai-response">
+                        @{
+                            // Basit Markdown Parser
+                            var lines = Model.Oneri.Split('\n');
+                            foreach (var line in lines)
+                            {
+                                var trimmedLine = line.Trim();
+                                if (trimmedLine.StartsWith("##"))
+                                {
+                                    <h4 class="mt-4 mb-2 text-primary border-bottom pb-2">@trimmedLine.Replace("##", "")</h4>
+                                }
+                                else if (trimmedLine.StartsWith("#"))
+                                {
+                                    <h5 class="mt-3 text-secondary fw-bold">@trimmedLine.Replace("#", "")</h5>
+                                }
+                                else if (trimmedLine.StartsWith("**") && trimmedLine.EndsWith("**"))
+                                {
+                                    <p class="fw-bold mb-2 text-dark">@trimmedLine.Replace("**", "")</p>
+                                }
+                                else if (trimmedLine.StartsWith("-") || trimmedLine.StartsWith("* "))
+                                {
+                                    <div class="d-flex align-items-start mb-1">
+                                        <i class="bi bi-dot fs-5 text-primary"></i>
+                                        <span>@trimmedLine.Substring(1)</span>
+                                    </div>
+                                }
+                                else if (!string.IsNullOrWhiteSpace(trimmedLine))
+                                {
+                                    <p class="mb-2 text-muted">@trimmedLine</p>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="card-footer bg-light">
+                    <small class="text-muted">
+                        <i class="bi bi-exclamation-triangle"></i> Bu öneriler tıbbi tavsiye değildir. Spora başlamadan önce doktorunuza danışın.
+                    </small>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="card shadow border-0" style="background-color: #f8f9fa;">
+                <div class="card-body text-center py-5">
+                    <div class="mb-3">
+                        <i class="bi bi-robot display-1 text-secondary opacity-50"></i>
+                    </div>
+                    <h4 class="text-muted">Asistan Hazır Bekliyor</h4>
+                    <p class="text-muted mb-0">Sol taraftaki formu doldurarak kişisel dönüşüm planınızı oluşturun.</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        function previewImage(input) {
+            const preview = document.getElementById('imagePreview');
+            preview.innerHTML = '';
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'img-fluid rounded shadow-sm';
+                    img.style.maxHeight = '200px';
+                    preview.appendChild(img);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+}
