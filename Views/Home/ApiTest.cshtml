@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "REST API Test";
+}
+
+<h2 class="mb-4"><i class="bi bi-code-square"></i> REST API Test Sayfası</h2>
+
+<div class="alert alert-info">
+    <i class="bi bi-info-circle"></i>
+    <strong>Bu sayfa REST API'yi test etmek içindir.</strong> Aşağıdaki butonlara tıklayarak API'den veri çekebilirsiniz.
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <button class="btn btn-primary w-100" onclick="fetchData('/api/FitnessApi/Antrenorler', 'Tüm Antrenörler')">
+            <i class="bi bi-person-badge"></i> Tüm Antrenörleri Getir
+        </button>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-success w-100" onclick="fetchData('/api/FitnessApi/Salonlar', 'Tüm Salonlar')">
+            <i class="bi bi-building"></i> Tüm Salonları Getir
+        </button>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-info w-100" onclick="fetchData('/api/FitnessApi/Hizmetler', 'Tüm Hizmetler')">
+            <i class="bi bi-card-list"></i> Tüm Hizmetleri Getir
+        </button>
+    </div>
+</div>
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <button class="btn btn-warning w-100" onclick="fetchData('/api/FitnessApi/Randevular', 'Tüm Randevular')">
+                <i class="bi bi-calendar3"></i> Tüm Randevuları Getir
+            </button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-danger w-100" onclick="fetchData('/api/FitnessApi/RandevularByDurum?durum=0', 'Bekleyen Randevular')">
+                <i class="bi bi-clock-history"></i> Bekleyen Randevular
+            </button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-dark w-100" onclick="fetchData('/api/FitnessApi/RandevuIstatistikleri', 'Randevu İstatistikleri')">
+                <i class="bi bi-bar-chart"></i> Randevu İstatistikleri
+            </button>
+        </div>
+    </div>
+}
+
+<div class="card shadow">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        <span id="apiTitle">API Sonucu</span>
+        <button class="btn btn-sm btn-light" onclick="clearResult()">
+            <i class="bi bi-x-circle"></i> Temizle
+        </button>
+    </div>
+    <div class="card-body">
+        <div id="loading" class="text-center d-none">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Yükleniyor...</span>
+            </div>
+            <p class="mt-2">Veriler yükleniyor...</p>
+        </div>
+        <div id="error" class="alert alert-danger d-none"></div>
+        <pre id="result" class="bg-light p-3 rounded" style="max-height: 500px; overflow-y: auto;"></pre>
+    </div>
+</div>
+
+<div class="mt-4">
+    <h4>API Endpoint Listesi:</h4>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <strong>GET</strong> <code>/api/FitnessApi/Antrenorler</code> - Tüm aktif antrenörleri listeler
+        </li>
+        <li class="list-group-item">
+            <strong>GET</strong> <code>/api/FitnessApi/AntrenorlerBySalon/{salonId}</code> - Belirli salondaki antrenörleri listeler
+        </li>
+        <li class="list-group-item">
+            <strong>GET</strong> <code>/api/FitnessApi/UygunAntrenorler?tarih={tarih}&hizmetId={id}</code> - Belirli tarih ve hizmet için uygun antrenörleri listeler
+        </li>
+        <li class="list-group-item">
+            <strong>GET</strong> <code>/api/FitnessApi/Salonlar</code> - Tüm aktif salonları listeler
+        </li>
+        <li class="list-group-item">
+            <strong>GET</strong> <code>/api/FitnessApi/Hizmetler</code> - Tüm aktif hizmetleri listeler
+        </li>
+        <li class="list-group-item">
+            <strong>GET</strong> <code>/api/FitnessApi/Randevular</code> - Tüm randevuları listeler (Admin)
+        </li>
+        <li class="list-group-item">
+            <strong>GET</strong> <code>/api/FitnessApi/RandevularByDurum?durum={durum}</code> - Duruma göre randevuları filtreler (Admin)
+        </li>
+        <li class="list-group-item">
+            <strong>GET</strong> <code>/api/FitnessApi/RandevuIstatistikleri</code> - Randevu istatistiklerini gösterir (Admin)
+        </li>
+    </ul>
+</div>
+
+@section Scripts {
+    <script>
+        async function fetchData(url, title) {
+            const loading = document.getElementById('loading');
+            const error = document.getElementById('error');
+            const result = document.getElementById('result');
+            const apiTitle = document.getElementById('apiTitle');
+
+            loading.classList.remove('d-none');
+            error.classList.add('d-none');
+            result.textContent = '';
+            apiTitle.textContent = title;
+
+            try {
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                result.textContent = JSON.stringify(data, null, 2);
+            } catch (err) {
+                error.textContent = 'Hata: ' + err.message;
+                error.classList.remove('d-none');
+                result.textContent = '';
+            } finally {
+                loading.classList.add('d-none');
+            }
+        }
+
+        function clearResult() {
+            document.getElementById('result').textContent = '';
+            document.getElementById('apiTitle').textContent = 'API Sonucu';
+            document.getElementById('error').classList.add('d-none');
+        }
+    </script>
+}

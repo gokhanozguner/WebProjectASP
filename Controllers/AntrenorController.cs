@@ -1,5 +1,6 @@
 ﻿using GokhanOzgunerWEB.Data;
 using GokhanOzgunerWEB.Models;
+using GokhanOzgunerWEB.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -17,6 +18,7 @@ namespace FitnessYonetimi.Controllers
             _context = context;
         }
 
+        // GET: Antrenor/Index
         public async Task<IActionResult> Index()
         {
             var antrenorler = await _context.Antrenorler
@@ -27,6 +29,7 @@ namespace FitnessYonetimi.Controllers
             return View(antrenorler);
         }
 
+        // GET: Antrenor/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null) return NotFound();
@@ -43,27 +46,71 @@ namespace FitnessYonetimi.Controllers
             return View(antrenor);
         }
 
+        // GET: Antrenor/Create
         public IActionResult Create()
         {
+            var viewModel = new AntrenorCreateViewModel
+            {
+                Musaitlikler = new List<MusaitlikViewModel>
+                {
+                    new MusaitlikViewModel { Gun = DayOfWeek.Monday, GunAdi = "Pazartesi" },
+                    new MusaitlikViewModel { Gun = DayOfWeek.Tuesday, GunAdi = "Salı" },
+                    new MusaitlikViewModel { Gun = DayOfWeek.Wednesday, GunAdi = "Çarşamba" },
+                    new MusaitlikViewModel { Gun = DayOfWeek.Thursday, GunAdi = "Perşembe" },
+                    new MusaitlikViewModel { Gun = DayOfWeek.Friday, GunAdi = "Cuma" },
+                    new MusaitlikViewModel { Gun = DayOfWeek.Saturday, GunAdi = "Cumartesi" },
+                    new MusaitlikViewModel { Gun = DayOfWeek.Sunday, GunAdi = "Pazar" }
+                }
+            };
+
             ViewData["SalonId"] = new SelectList(_context.Salonlar.Where(s => s.Aktif), "Id", "Ad");
-            return View();
+            return View(viewModel);
         }
 
+        // POST: Antrenor/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AdSoyad,UzmanlikAlanlari,Telefon,Email,Aktif,SalonId")] Antrenor antrenor)
+        public async Task<IActionResult> Create(AntrenorCreateViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
+                var antrenor = new Antrenor
+                {
+                    AdSoyad = viewModel.AdSoyad,
+                    UzmanlikAlanlari = viewModel.UzmanlikAlanlari,
+                    Telefon = viewModel.Telefon,
+                    Email = viewModel.Email,
+                    Aktif = viewModel.Aktif,
+                    SalonId = viewModel.SalonId
+                };
+
                 _context.Add(antrenor);
                 await _context.SaveChangesAsync();
-                TempData["Success"] = "Antrenör başarıyla oluşturuldu!";
+
+                // Müsaitleri ekle
+                foreach (var musaitlik in viewModel.Musaitlikler.Where(m => m.Secildi))
+                {
+                    var antrenorMusaitlik = new AntrenorMusaitlik
+                    {
+                        AntrenorId = antrenor.Id,
+                        Gun = musaitlik.Gun,
+                        BaslangicSaati = musaitlik.BaslangicSaati,
+                        BitisSaati = musaitlik.BitisSaati,
+                        Aktif = true
+                    };
+                    _context.AntrenorMusaitlikler.Add(antrenorMusaitlik);
+                }
+
+                await _context.SaveChangesAsync();
+                TempData["Success"] = "Antrenör ve müsaitlikler başarıyla oluşturuldu!";
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SalonId"] = new SelectList(_context.Salonlar.Where(s => s.Aktif), "Id", "Ad", antrenor.SalonId);
-            return View(antrenor);
+
+            ViewData["SalonId"] = new SelectList(_context.Salonlar.Where(s => s.Aktif), "Id", "Ad", viewModel.SalonId);
+            return View(viewModel);
         }
 
+        // GET: Antrenor/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -75,6 +122,7 @@ namespace FitnessYonetimi.Controllers
             return View(antrenor);
         }
 
+        // POST: Antrenor/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,AdSoyad,UzmanlikAlanlari,Telefon,Email,Aktif,SalonId")] Antrenor antrenor)
@@ -102,6 +150,7 @@ namespace FitnessYonetimi.Controllers
             return View(antrenor);
         }
 
+        // GET: Antrenor/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
@@ -115,6 +164,7 @@ namespace FitnessYonetimi.Controllers
             return View(antrenor);
         }
 
+        // POST: Antrenor/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

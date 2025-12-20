@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|c:\\users\\\u00F6zg\u00FCner\\source\\repos\\gokhanozgunerweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|c:\\users\\\u00F6zg\u00FCner\\source\\repos\\gokhanozgunerweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|c:\\users\\\u00F6zg\u00FCner\\source\\repos\\gokhanozgunerweb\\views\\home\\apitest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|solutionrelative:views\\home\\apitest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|c:\\users\\\u00F6zg\u00FCner\\source\\repos\\gokhanozgunerweb\\controllers\\api\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|solutionrelative:controllers\\api\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|c:\\users\\\u00F6zg\u00FCner\\source\\repos\\gokhanozgunerweb\\controllers\\antrenorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|solutionrelative:controllers\\antrenorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|c:\\users\\\u00F6zg\u00FCner\\source\\repos\\gokhanozgunerweb\\viewmodels\\antrenorcreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|solutionrelative:viewmodels\\antrenorcreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|c:\\users\\\u00F6zg\u00FCner\\source\\repos\\gokhanozgunerweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,14 +79,6 @@
       "RelativeMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|solutionrelative:views\\antrenor\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|c:\\users\\\u00F6zg\u00FCner\\source\\repos\\gokhanozgunerweb\\views\\antrenor\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|solutionrelative:views\\antrenor\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|c:\\users\\\u00F6zg\u00FCner\\source\\repos\\gokhanozgunerweb\\controllers\\antrenorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|solutionrelative:controllers\\antrenorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|c:\\users\\\u00F6zg\u00FCner\\source\\repos\\gokhanozgunerweb\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|solutionrelative:data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -93,10 +109,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|c:\\users\\\u00F6zg\u00FCner\\source\\repos\\gokhanozgunerweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|c:\\users\\\u00F6zg\u00FCner\\source\\repos\\gokhanozgunerweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19C8074B-ACC0-F06A-5504-05CA97CD527D}|GokhanOzgunerWEB.csproj|c:\\users\\\u00F6zg\u00FCner\\source\\repos\\gokhanozgunerweb\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -170,31 +182,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MyAppointments.cshtml",
-              "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Randevu\\MyAppointments.cshtml",
-              "RelativeDocumentMoniker": "Views\\Randevu\\MyAppointments.cshtml",
-              "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Randevu\\MyAppointments.cshtml",
-              "RelativeToolTip": "Views\\Randevu\\MyAppointments.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAqwCMAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-18T19:27:46.176Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Randevu\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Randevu\\Create.cshtml",
-              "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Randevu\\Create.cshtml",
-              "RelativeToolTip": "Views\\Randevu\\Create.cshtml",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFAAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-18T19:27:12.139Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T11:57:32.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApiTest.cshtml",
+              "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Home\\ApiTest.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\ApiTest.cshtml",
+              "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Home\\ApiTest.cshtml",
+              "RelativeToolTip": "Views\\Home\\ApiTest.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-20T11:56:47.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApiController.cs",
+              "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Controllers\\API\\ApiController.cs",
+              "RelativeDocumentMoniker": "Controllers\\API\\ApiController.cs",
+              "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Controllers\\API\\ApiController.cs",
+              "RelativeToolTip": "Controllers\\API\\ApiController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T11:56:00.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "RandevuController.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Controllers\\RandevuController.cs",
               "RelativeDocumentMoniker": "Controllers\\RandevuController.cs",
@@ -207,7 +234,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Shared\\_Layout.cshtml*",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml*",
+              "ViewState": "AgIAACUAAAAAAAAAAAAowDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-12T20:40:49.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "AntrenorCreateViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\ViewModels\\AntrenorCreateViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\AntrenorCreateViewModel.cs",
+              "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\ViewModels\\AntrenorCreateViewModel.cs",
+              "RelativeToolTip": "ViewModels\\AntrenorCreateViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T11:37:09.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Hizmet\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Hizmet\\Edit.cshtml",
@@ -219,20 +272,57 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "AntrenorController.cs",
+              "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Controllers\\AntrenorController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AntrenorController.cs",
+              "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Controllers\\AntrenorController.cs",
+              "RelativeToolTip": "Controllers\\AntrenorController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T19:07:06.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Randevu\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Randevu\\Create.cshtml",
+              "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Randevu\\Create.cshtml",
+              "RelativeToolTip": "Views\\Randevu\\Create.cshtml",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFAAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-18T19:27:12.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MyAppointments.cshtml",
+              "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Randevu\\MyAppointments.cshtml",
+              "RelativeDocumentMoniker": "Views\\Randevu\\MyAppointments.cshtml",
+              "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Randevu\\MyAppointments.cshtml",
+              "RelativeToolTip": "Views\\Randevu\\MyAppointments.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAqwCMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-18T19:27:46.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-11T14:13:53.36Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Randevu\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Randevu\\Index.cshtml",
@@ -244,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Hizmet\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Hizmet\\Create.cshtml",
@@ -256,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Hizmet\\Delete.cshtml",
               "RelativeDocumentMoniker": "Views\\Hizmet\\Delete.cshtml",
@@ -268,7 +358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Hizmet\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Hizmet\\Index.cshtml",
@@ -280,7 +370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "HizmetController.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Controllers\\HizmetController.cs",
               "RelativeDocumentMoniker": "Controllers\\HizmetController.cs",
@@ -292,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Antrenor\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Antrenor\\Edit.cshtml",
@@ -304,19 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Antrenor\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Antrenor\\Create.cshtml",
-              "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Antrenor\\Create.cshtml",
-              "RelativeToolTip": "Views\\Antrenor\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-16T19:09:15.343Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 17,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Antrenor\\Delete.cshtml",
               "RelativeDocumentMoniker": "Views\\Antrenor\\Delete.cshtml",
@@ -328,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Antrenor\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Antrenor\\Index.cshtml",
@@ -340,19 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AntrenorController.cs",
-              "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Controllers\\AntrenorController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AntrenorController.cs",
-              "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Controllers\\AntrenorController.cs",
-              "RelativeToolTip": "Controllers\\AntrenorController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T19:07:06.278Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "SeedData.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Data\\SeedData.cs",
               "RelativeDocumentMoniker": "Data\\SeedData.cs",
@@ -364,7 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Salon\\Delete.cshtml",
               "RelativeDocumentMoniker": "Views\\Salon\\Delete.cshtml",
@@ -376,7 +442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Salon\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Salon\\Edit.cshtml",
@@ -388,7 +454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Salon\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Salon\\Create.cshtml",
@@ -400,7 +466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Salon\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Salon\\Index.cshtml",
@@ -412,7 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "SalonController.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Controllers\\SalonController.cs",
               "RelativeDocumentMoniker": "Controllers\\SalonController.cs",
@@ -424,7 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
@@ -436,7 +502,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
@@ -448,7 +514,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
@@ -460,7 +526,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
@@ -472,19 +538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAABIAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-12T20:40:49.262Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "20251211154553_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Migrations\\20251211154553_InitialCreate.cs",
               "RelativeDocumentMoniker": "Migrations\\20251211154553_InitialCreate.cs",
@@ -496,7 +550,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -508,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "Anternor.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Models\\Anternor.cs",
               "RelativeDocumentMoniker": "Models\\Anternor.cs",
@@ -520,7 +574,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "Hizmet.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Models\\Hizmet.cs",
               "RelativeDocumentMoniker": "Models\\Hizmet.cs",
@@ -532,7 +586,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "AntrenorMusaitlik.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Models\\AntrenorMusaitlik.cs",
               "RelativeDocumentMoniker": "Models\\AntrenorMusaitlik.cs",
@@ -544,7 +598,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "AntrenorHizmet.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Models\\AntrenorHizmet.cs",
               "RelativeDocumentMoniker": "Models\\AntrenorHizmet.cs",
@@ -556,7 +610,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "Salon.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Models\\Salon.cs",
               "RelativeDocumentMoniker": "Models\\Salon.cs",
@@ -568,7 +622,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
@@ -580,7 +634,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "GokhanOzgunerWEB.csproj",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\GokhanOzgunerWEB.csproj",
               "RelativeDocumentMoniker": "GokhanOzgunerWEB.csproj",
@@ -592,7 +646,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "AccountViewModels.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\ViewModels\\AccountViewModels.cs",
               "RelativeDocumentMoniker": "ViewModels\\AccountViewModels.cs",
@@ -604,7 +658,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "Randevu.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Models\\Randevu.cs",
               "RelativeDocumentMoniker": "Models\\Randevu.cs",
@@ -616,7 +670,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\\u00D6zg\u00FCner\\source\\repos\\GokhanOzgunerWEB\\Models\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "Models\\ApplicationUser.cs",

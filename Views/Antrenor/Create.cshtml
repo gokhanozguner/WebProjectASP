@@ -1,11 +1,11 @@
-﻿@model GokhanOzgunerWEB.Models.Antrenor
+﻿@model GokhanOzgunerWEB.ViewModels.AntrenorCreateViewModel
 
 @{
     ViewData["Title"] = "Yeni Antrenör Ekle";
 }
 
 <div class="row justify-content-center">
-    <div class="col-md-8">
+    <div class="col-md-10">
         <div class="card shadow">
             <div class="card-header bg-danger text-white">
                 <h4 class="mb-0"><i class="bi bi-person-badge"></i> Yeni Antrenör Ekle</h4>
@@ -14,18 +14,21 @@
                 <form asp-action="Create" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-                    <div class="mb-3">
-                        <label asp-for="AdSoyad" class="form-label"></label>
-                        <input asp-for="AdSoyad" class="form-control" placeholder="Örn: Ahmet Yılmaz" />
-                        <span asp-validation-for="AdSoyad" class="text-danger"></span>
-                    </div>
+                    <h5 class="mb-3"><i class="bi bi-person"></i> Temel Bilgiler</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="AdSoyad" class="form-label"></label>
+                            <input asp-for="AdSoyad" class="form-control" placeholder="Örn: Ahmet Yılmaz" />
+                            <span asp-validation-for="AdSoyad" class="text-danger"></span>
+                        </div>
 
-                    <div class="mb-3">
-                        <label asp-for="SalonId" class="form-label">Salon</label>
-                        <select asp-for="SalonId" class="form-select" asp-items="ViewBag.SalonId">
-                            <option value="">-- Salon Seçin --</option>
-                        </select>
-                        <span asp-validation-for="SalonId" class="text-danger"></span>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="SalonId" class="form-label">Salon</label>
+                            <select asp-for="SalonId" class="form-select" asp-items="ViewBag.SalonId">
+                                <option value="">-- Salon Seçin --</option>
+                            </select>
+                            <span asp-validation-for="SalonId" class="text-danger"></span>
+                        </div>
                     </div>
 
                     <div class="mb-3">
@@ -48,9 +51,56 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 form-check">
+                    <div class="mb-4 form-check">
                         <input asp-for="Aktif" class="form-check-input" checked />
                         <label asp-for="Aktif" class="form-check-label"></label>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h5 class="mb-3"><i class="bi bi-calendar-week"></i> Müsaitlik Durumu</h5>
+                    <p class="text-muted small">Antrenörün çalışacağı günleri ve saatleri seçin</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="table-light">
+                                <tr>
+                                    <th width="50">Seç</th>
+                                    <th>Gün</th>
+                                    <th>Başlangıç Saati</th>
+                                    <th>Bitiş Saati</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 0; i < Model.Musaitlikler.Count; i++)
+                                {
+                                    <tr>
+                                        <td class="text-center">
+                                            <input type="hidden" asp-for="Musaitlikler[i].Gun" />
+                                            <input type="hidden" asp-for="Musaitlikler[i].GunAdi" />
+                                            <input type="checkbox" asp-for="Musaitlikler[i].Secildi" class="form-check-input" 
+                                                   onchange="toggleSaatler(this, @i)" />
+                                        </td>
+                                        <td>
+                                            <strong>@Model.Musaitlikler[i].GunAdi</strong>
+                                        </td>
+                                        <td>
+                                            <input type="time" asp-for="Musaitlikler[i].BaslangicSaati" 
+                                                   class="form-control form-control-sm" id="baslangic_@i" disabled />
+                                        </td>
+                                        <td>
+                                            <input type="time" asp-for="Musaitlikler[i].BitisSaati" 
+                                                   class="form-control form-control-sm" id="bitis_@i" disabled />
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle"></i> 
+                        <strong>İpucu:</strong> En az bir gün seçmelisiniz. Seçilen günler için başlangıç ve bitiş saatlerini ayarlayın.
                     </div>
 
                     <hr>
@@ -71,4 +121,32 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        function toggleSaatler(checkbox, index) {
+            const baslangic = document.getElementById('baslangic_' + index);
+            const bitis = document.getElementById('bitis_' + index);
+            
+            if (checkbox.checked) {
+                baslangic.disabled = false;
+                bitis.disabled = false;
+                baslangic.required = true;
+                bitis.required = true;
+            } else {
+                baslangic.disabled = true;
+                bitis.disabled = true;
+                baslangic.required = false;
+                bitis.required = false;
+            }
+        }
+
+        // Sayfa yüklendiğinde checkboxları kontrol et
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach((cb, index) => {
+                if (cb.name.includes('Secildi')) {
+                    toggleSaatler(cb, index);
+                }
+            });
+        });
+    </script>
 }
